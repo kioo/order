@@ -1,0 +1,17 @@
+spring:
+  application:
+     name: order
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id:  CONFIG   # Config 服务的名称
+      profile: test
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+# 1. 默认的application.yml 配置文件在使用config服务时在启动项目时读不到application.yml,需要改名为bootstrap.yml 先从config服务器读取数据
+# 2. config 服务可以配置多个，其他服务获取config信息时会动态找到可以使用的config服务器
+# 3. eureka 服务器默认端口为8761，Config从git上拉取有一个公共的配置，不需要的话可以注释。需要将它的配置放在本地配置文件内

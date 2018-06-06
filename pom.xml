@@ -32,7 +32,6 @@
         <order-common.version>0.0.1-SNAPSHOT</order-common.version>
     </properties>
 
-
     <dependencyManagement>
         <dependencies>
             <dependency>
